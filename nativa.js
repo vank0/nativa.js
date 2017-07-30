@@ -109,15 +109,17 @@ var Nativa = function (customMessages) {
             element.setCustomValidity(messages.badInput);
             return false;
         }
-        if (element.validity.rangeOverflow) {
+        if (element.validity.rangeOverflow || parseInt(element.value) > parseInt(element.getAttribute('max'))) {
+            console.error('#' +  element.getAttribute('id') + ': ' + messages.rangeOverflow.replace('$max', element.getAttribute('max'));
             element.setCustomValidity(messages.rangeOverflow.replace('$max', element.getAttribute('max')));
             return false;
         }
-        if (element.validity.rangeUnderflow) {
+        if (element.validity.rangeUnderflow || parseInt(element.value) < parseInt(element.getAttribute('min'))) {
+            console.error('#' +  element.getAttribute('id') + ': ' + messages.rangeUnderflow.replace('$min', element.getAttribute('min')));
             element.setCustomValidity(messages.rangeUnderflow.replace('$min', element.getAttribute('min')));
             return false;
         }
-        if (element.validity.stepMismatch) {
+        if (element.validity.stepMismatch || ) {
             element.setCustomValidity(messages.stepMismatch.replace('$step', element.getAttribute('step')));
             return false;
         }
