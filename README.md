@@ -60,7 +60,7 @@ if(validator.validateForm('step1') && validator.validateForm('step2')) {
 
 Validation using reCaptcha:
 ---
-First you must load the recaptcha API (https://www.google.com/recaptcha/api.js?onload=**onloadCallback**&render=**explicit**)
+First you must load the recaptcha API (https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit)
 
 Load validator, and initialize it (var validator = new Validator();)
 
@@ -80,3 +80,5 @@ Sample use:
     <button type="submit">Submit</button>
 </form>
 `
+
+</> with <3 @ [Code Nest](https://code-nest.com)
